@@ -24,6 +24,10 @@ public class Crab extends Actor
         {
             turn(-3);
         }
+        if(isTouching(Worm.class))
+        {
+            removeTouching(Worm.class);
+        }
         
     }    
 }
