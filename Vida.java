@@ -1,46 +1,42 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Tiempo here.
+ * Write a description of class Vida here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Tiempo extends Actor
+public class Vida extends Actor
 {
-    /**
-     * Act - do whatever the Tiempo wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     
     private SimpleTimer timer;
     private Counter contador;
     
-    //Se ejecuta al momento de crear un objeto
-    public Tiempo()
+    public Vida()
     {
-        timer = new SimpleTimer();
-        contador = new Counter("Tiempo: ");
-        contador.setValue(30);
+        //timer = new SimpleTimer();
+        contador = new Counter("Vidas: ");
+        contador.setValue(3);
     }
     
     //Se ejecuta al momento de agregar el objeto al mundo
     protected void addedToWorld(World world)
     {
-        world.addObject(contador, 60, 18);
+        world.addObject(contador, 53, 53);
     }
     
     public void act() 
     {
-        if(timer.millisElapsed() >1000)
+        if(isTouching(Crab.class))
         {
             //*System.out.println(timer.millisElapsed());
             contador.setValue(contador.getValue() - 1);
             if(contador.getValue() == 0)
             {
+                removeTouching(Crab.class);
                 Greenfoot.stop();
             }
-            timer.mark();
+            //timer.mark();
         }
-    }    
+    }     
 }

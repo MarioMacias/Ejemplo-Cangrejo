@@ -23,9 +23,9 @@ public class Lobster extends Actor
             turn(Greenfoot.getRandomNumber(180) - 90);
             pasos = 0;
         }
-        if(isTouching(Crab.class))
+        /*if(isTouching(Crab.class))
         {
             removeTouching(Crab.class);
-        }
+        }*/
     }    
 }
