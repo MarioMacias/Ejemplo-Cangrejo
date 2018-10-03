@@ -10,6 +10,8 @@ public class CrabWorld extends greenfoot.World
 {
     private Lobster lobster;
     private Crab crab;
+    private GreenfootSound musica;
+    private Counter contador;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -25,7 +27,30 @@ public class CrabWorld extends greenfoot.World
         addObject(crab,88,85);
         lobster = new Lobster();
         addObject(lobster,410,82);
+        contador = new Counter("Vidas: ");
+        contador.setValue(3);
         prepare(numGusano);
+        
+        musica = new GreenfootSound("ufo-t-balt.mp3");
+    }
+    
+    public void setVidas(int mod)
+    {
+        contador.setValue(contador.getValue() - mod);
+        if(contador.getValue() == 0)
+        {
+            Greenfoot.stop();
+        }
+    }
+    
+    public void started()
+    {
+        musica.playLoop();
+    }
+    
+    public void stooped()
+    {
+        musica.pause();
     }
     
     public Lobster accedeLangosta()
@@ -33,14 +58,13 @@ public class CrabWorld extends greenfoot.World
         return lobster;
     }
     
-
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
     private void prepare(int numGusano)
     {
-        
+
         for(int i = 0; i < numGusano; i++)
         {
             Worm worm = new Worm();
@@ -51,5 +75,10 @@ public class CrabWorld extends greenfoot.World
 
         Tiempo tiempo = new Tiempo();
         addObject(tiempo,29,15);
+        Counter counter2 = new Counter("Vida: ");
+        addObject(counter2,536,21);
+        counter2.setLocation(518,14);
+        counter2.setLocation(519,14);
+        counter2.setValue(3);
     }
 }

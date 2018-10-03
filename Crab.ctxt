@@ -3,5 +3,5 @@ comment0.target=Crab
 comment0.text=\n\ Write\ a\ description\ of\ class\ Crab\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Crab\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+comment1.text=public\ Crab()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ vidas\ \=\ new\ Counter("Vidas\:\ ");\n\ \ \ \ \ \ \ \ vidas.setValue(3);\n}
 numComments=2
